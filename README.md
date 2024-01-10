@@ -1,1 +1,1 @@
-A repository with the scorce code for the first part of ny friends birthday gift - hosted [here](https://ahujaesh.github.io/birthday-surprise/). If you see any errors, our want to help, please open a issue, pull request, or email me ahuja.eshaan0@gmail.com!
+A repository with the scorce code for the first part of my friends birthday gift - hosted [here](https://ahujaesh.github.io/birthday-surprise/). If you see any errors, our want to help, please open a issue, pull request, or email me here - ahuja.eshaan0@gmail.com!
