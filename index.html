@@ -1091,8 +1091,13 @@ var lastTime;
     
     // flag test one : X: 10.15,     Y: -0.73,     Z: 50.07
 	if (mesh.position.x.toFixed(2) > 0 && mesh.position.x.toFixed(2) < 50 && mesh.position.y.toFixed(2) > -50 && mesh.position.y.toFixed(2) < 50 && mesh.position.z.toFixed(2) > 35 && mesh.position.z.toFixed(2) < 70) {
-    	info.innerHTML = `<h1>:)</h1>`
-    document.getElementById('goal').innerHTML = "hi";
+    	info.innerHTML = `<h1>Good job, your next quest is to climb a mountain</h1>`
+    document.getElementById('goal').innerHTML = "Climb a mountain / Get Z over 175";
+    }
+    
+    if (mesh.position.z.toFixed(2) > 175) {
+    	info.innerHTML = `<h1>Good Job, text me for your next quest! </h1>`
+    document.getElementById('goal').innerHTML = "Game Complete";
     }
     //change spawn to X: -56.00,     Y: 26.29,     Z: -38.02
  
