@@ -1135,10 +1135,7 @@ function updateDrive(forward = js.forward, turn = js.turn) {
 
             if (mesh.position.y.toFixed(2) > 30) {
 	        var shdata = document.getElementById('goal').innerHTML;
-		if (shdata == "Goal: Climb a mountain") {
-			for (let i = 0; i < 5000; i++) {
-			  setTimeout(() => { info.innerHTML = `<p>Good job, you have completed the second quest. Next, find a valley under Y = 0 and enter it. Good luck!</p>` }, i);
-			}
+		if (shdata == "Goal: Climb a mountain" || shdata == "Goal: Go under Y = 0") {
 			info.innerHTML = `<p>Good job, you have completed the second quest. Next, find a valley under Y = 0 and enter it. Good luck!</p>`
 			document.getElementById('goal').innerHTML = "Goal: Go under Y = 0";
 			
@@ -1147,7 +1144,7 @@ function updateDrive(forward = js.forward, turn = js.turn) {
 
 	    if (mesh.position.y.toFixed(2) < 0) {
 	        var shdata = document.getElementById('goal').innerHTML;
-		if (shdata == "Goal: Go under Y = 0") {
+		if (shdata == "Goal: Go under Y = 0" || shdata == "Goal: Go under Y = 0") {
 	                info.innerHTML = `<p>Good Job, text me "I have completed the first site", along with a photo of this screen for your next quest. Good luck! </p>`
 	            	document.getElementById('goal').innerHTML = "Game Complete :)";
 			
