@@ -1126,17 +1126,23 @@ function updateDrive(forward = js.forward, turn = js.turn) {
             info.innerHTML = `<span>X:</span>${mesh.position.x.toFixed(2)} <span>Y:</span>${mesh.position.y.toFixed(2)} <span>Z:</span>${mesh.position.z.toFixed(2)}`
 
             // flag test one : X: 10.15,     Y: -0.73,     Z: 50.07
+
+		int taskonedone = 0;
+		int tasktwodone = 0;
+
             if (mesh.position.x.toFixed(2) > 0 && mesh.position.x.toFixed(2) < 50 && mesh.position.y.toFixed(2) > -50 && mesh.position.y.toFixed(2) < 50 && mesh.position.z.toFixed(2) > 35 && mesh.position.z.toFixed(2) < 70) {
                 info.innerHTML = `<p>Good job, you have completed the first quest. Next, climb a mountain over Y = 40. Good luck!</p>`
                 document.getElementById('goal').innerHTML = "Goal: Climb a mountain";
+	        taskonedone = 1;
             }
 
-            if (mesh.position.y.toFixed(2) > 40) {
+            if (mesh.position.y.toFixed(2) > 40 && taskonedone == 1) {
                 info.innerHTML = `<p>Good job, you have completed the first quest. Next, find a valley under Y = 0. Good luck!</p>`
                 document.getElementById('goal').innerHTML = "Goal: Go under Y = 0";
+	        tasktwodone = 1;
             }
 
-	    if (mesh.position.y.toFixed(2) < 0) {
+	    if (mesh.position.y.toFixed(2) < 0 && taskonedone == 1 && tasktwodone == 1) {
                 info.innerHTML = `<p>Good Job, text me "I have completed the first site", along with a photo of this screen for your next quest. Good luck! </p>`
             	document.getElementById('goal').innerHTML = "Game Complete :)";
             }
