@@ -1102,7 +1102,7 @@
             }
 
             if (mesh.position.z.toFixed(2) > 175) {
-                info.innerHTML = `<h1>Good Job, text me "I have completed the first site", along with a photo of this screen for your next quest. Good luck! </h1>`
+                info.innerHTML = `<p>Good Job, text me "I have completed the first site", along with a photo of this screen for your next quest. Good luck! </p>`
             document.getElementById('goal').innerHTML = "Game Complete :)";
             }
             //change spawn to X: -56.00,     Y: 26.29,     Z: -38.02
@@ -1124,6 +1124,9 @@
         document.getElementById('okay-button').addEventListener('click', function () {
           document.getElementById('overlay').style.display = 'none';
           // Call the function containing your game logic after the user clicks "Okay"
+	  var div = document.getElementById(goal);
+    	  div.style.display = 'block';
+
           runGame();
         });
       </script>
@@ -1160,6 +1163,7 @@
 	        -webkit-transform: translateX(-50%);
 	        font-size: 14px;
 	        z-index: 289;
+	        display: none;
 	      }
 	
 	      #info span {
