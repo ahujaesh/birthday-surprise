@@ -1094,7 +1094,7 @@
 
             // flag test one : X: 10.15,     Y: -0.73,     Z: 50.07
             if (mesh.position.x.toFixed(2) > 0 && mesh.position.x.toFixed(2) < 50 && mesh.position.y.toFixed(2) > -50 && mesh.position.y.toFixed(2) < 50 && mesh.position.z.toFixed(2) > 35 && mesh.position.z.toFixed(2) < 70) {
-                info.innerHTML = `<p>Good job, you have completed the first quest. Next, climb a mountain. Good luck!</p>`
+                info.innerHTML = `<p>Good job, you have completed the first quest. Next, climb a mountain over Z = 175. Good luck!</p>`
             document.getElementById('goal').innerHTML = "Goal: Climb a mountain";
             }
 
@@ -1143,6 +1143,7 @@
 	        -webkit-transform: translateX(-50%);
 	        font-size: 14px;
 	        z-index: 289;
+	        background: black;
 	      }
 	
 	      #info span {
