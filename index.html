@@ -1136,13 +1136,13 @@ function updateDrive(forward = js.forward, turn = js.turn) {
 	        taskonedone = 1;
             }
 
-            if (mesh.position.y.toFixed(2) > 30 && taskonedone == 1) {
+            if (mesh.position.y.toFixed(2) > 30 && taskonedone === 1) {
                 info.innerHTML = `<p>Good job, you have completed the first quest. Next, find a valley under Y = 0. Good luck!</p>`
                 document.getElementById('goal').innerHTML = "Goal: Go under Y = 0";
 	        tasktwodone = 1;
             }
 
-	    if (mesh.position.y.toFixed(2) < 0 && taskonedone == 1 && tasktwodone == 1) {
+	    if (mesh.position.y.toFixed(2) < 0 && taskonedone === 1 && tasktwodone === 1) {
                 info.innerHTML = `<p>Good Job, text me "I have completed the first site", along with a photo of this screen for your next quest. Good luck! </p>`
             	document.getElementById('goal').innerHTML = "Game Complete :)";
             }
