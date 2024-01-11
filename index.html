@@ -1131,12 +1131,12 @@ function updateDrive(forward = js.forward, turn = js.turn) {
 		var tasktwodone = 0;
 
             if (mesh.position.x.toFixed(2) > 0 && mesh.position.x.toFixed(2) < 50 && mesh.position.y.toFixed(2) > -50 && mesh.position.y.toFixed(2) < 50 && mesh.position.z.toFixed(2) > 35 && mesh.position.z.toFixed(2) < 70) {
-                info.innerHTML = `<p>Good job, you have completed the first quest. Next, climb a mountain over Y = 40. Good luck!</p>`
+                info.innerHTML = `<p>Good job, you have completed the first quest. Next, climb a mountain over Y = 30. Good luck!</p>`
                 document.getElementById('goal').innerHTML = "Goal: Climb a mountain";
 	        taskonedone = 1;
             }
 
-            if (mesh.position.y.toFixed(2) > 40 && taskonedone == 1) {
+            if (mesh.position.y.toFixed(2) > 30 && taskonedone == 1) {
                 info.innerHTML = `<p>Good job, you have completed the first quest. Next, find a valley under Y = 0. Good luck!</p>`
                 document.getElementById('goal').innerHTML = "Goal: Go under Y = 0";
 	        tasktwodone = 1;
