@@ -37,6 +37,9 @@
           <div id="modal-content" style="z-index: 289;">
               <p>	Instructions: This website contains a series of puzzles. Your first goal is to get to the flag, and you can move by dragging the joystick. If there are any errors, shoot me a text. Good Luck!</p>
               <!-- Add any other instructions or information here -->
+	      <br>
+	      <br>
+		  <br>
               <button id="okay-button">I'm ready to begin</button>
 
 		<p>Hosted on github pages - credit to <em>pizza3</em> for the idea</p>
@@ -1124,8 +1127,8 @@
         document.getElementById('okay-button').addEventListener('click', function () {
           document.getElementById('overlay').style.display = 'none';
           // Call the function containing your game logic after the user clicks "Okay"
-	  var div = document.getElementById(goal);
-    	  div.style.display = 'block';
+	  // var div = document.getElementById(goal);
+   //  	  div.style.display = 'block';
 
           runGame();
         });
@@ -1163,7 +1166,7 @@
 	        -webkit-transform: translateX(-50%);
 	        font-size: 14px;
 	        z-index: 289;
-	        display: none;
+/* 	        display: none; */
 	      }
 	
 	      #info span {
