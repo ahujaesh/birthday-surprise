@@ -35,6 +35,8 @@
               <p>	Instructions: This website contains a series of puzzles. Your first goal is to get to the flag, and you can move by dragging the joystick. If there are any errors, shoot me a text. Good Luck!</p>
               <!-- Add any other instructions or information here -->
               <button id="okay-button">I'm ready to begin</button>
+
+		<p>Hosted on github pages - credit to <em>pizza3</em> for the idea</p>
           </div>
       </div>
 
@@ -1092,7 +1094,7 @@
             // flag test one : X: 10.15,     Y: -0.73,     Z: 50.07
             if (mesh.position.x.toFixed(2) > 0 && mesh.position.x.toFixed(2) < 50 && mesh.position.y.toFixed(2) > -50 && mesh.position.y.toFixed(2) < 50 && mesh.position.z.toFixed(2) > 35 && mesh.position.z.toFixed(2) < 70) {
                 info.innerHTML = `<h3>Good job, you have completed the first quest. Easy, Right! Your next quest is to climb a mountain (Go over 175 Z). Good luck</h3>`
-            document.getElementById('goal').innerHTML = "Climb a mountain over Z=175";
+            document.getElementById('goal').innerHTML = "Goal: Climb a mountain over Z=175";
             }
 
             if (mesh.position.z.toFixed(2) > 175) {
@@ -1122,28 +1124,31 @@
         });
       </script>
       <style>
-      body {
-        margin: 0;
-        overflow: hidden;
-        background-color: #000000;
-        color: white;
-      }
-      #info {
-        font-family: monospace;
-        font-weight: normal;
-        position: absolute;
-        top: 20px;
-        left: 50%;
-        width: 100%;
-        text-align: center;
-        transform: translateX(-50%);
-        -webkit-transform: translateX(-50%);
-        font-size: 14px;
-      }
-
-      #info span {
-        color: wheat;
-      }
+	      body {
+	        margin: 0;
+	        overflow: hidden;
+	        background-color: #000000;
+	        color: white;
+	      }
+	      #info {
+	        font-family: monospace;
+	        font-weight: normal;
+	        position: absolute;
+	        top: 20px;
+	        left: 50%;
+	        width: 100%;
+	        text-align: center;
+	        transform: translateX(-50%);
+	        -webkit-transform: translateX(-50%);
+	        font-size: 14px;
+	      }
+	
+	      #info span {
+	        color: wheat;
+	      }
+	      #goal {
+		font-size: 10;
+	      }
   </style>
   </head>
   <body>
