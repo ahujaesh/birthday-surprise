@@ -1127,8 +1127,8 @@ function updateDrive(forward = js.forward, turn = js.turn) {
 
             // flag test one : X: 10.15,     Y: -0.73,     Z: 50.07
 
-		int taskonedone = 0;
-		int tasktwodone = 0;
+		var taskonedone = 0;
+		var tasktwodone = 0;
 
             if (mesh.position.x.toFixed(2) > 0 && mesh.position.x.toFixed(2) < 50 && mesh.position.y.toFixed(2) > -50 && mesh.position.y.toFixed(2) < 50 && mesh.position.z.toFixed(2) > 35 && mesh.position.z.toFixed(2) < 70) {
                 info.innerHTML = `<p>Good job, you have completed the first quest. Next, climb a mountain over Y = 40. Good luck!</p>`
