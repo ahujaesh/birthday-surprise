@@ -1127,28 +1127,28 @@ function updateDrive(forward = js.forward, turn = js.turn) {
 
             // flag test one : X: 10.15,     Y: -0.73,     Z: 50.07
 
-		let one = 0;
-		let two = 0;
+		
 
             if (mesh.position.x.toFixed(2) > 0 && mesh.position.x.toFixed(2) < 50 && mesh.position.y.toFixed(2) > -50 && mesh.position.y.toFixed(2) < 50 && mesh.position.z.toFixed(2) > 35 && mesh.position.z.toFixed(2) < 70) {
                 info.innerHTML = `<p>Good job, you have completed the first quest. Next, climb a mountain over Y = 30. Good luck!</p>`
                 document.getElementById('goal').innerHTML = "Goal: Climb a mountain";
-	        one = 1;
             }
 
             if (mesh.position.y.toFixed(2) > 30) {
-		if (one > 0) {
-			info.innerHTML = `<p>Good job, you have completed the first quest. Next, find a valley under Y = 0. Good luck!</p>`
-	                document.getElementById('goal').innerHTML = "Goal: Go under Y = 0";
-		        two = 1;
-			
+	        var shdata = document.getElementById('goal').innerHTML;
+		if (shdata == "Goal: Climb a mountain") {
+			info.innerHTML = `<p>Good job, you have completed the second quest. Next, find a valley under Y = 0. Good luck!</p>`
+			document.getElementById('goal').innerHTML = "Goal: Go under Y = 0";
+			two = 1;
 		}
-                info.innerHTML = `<p>The VAriable is the problem</p>`
             }
 
-	    if (mesh.position.y.toFixed(2) < 0 && one > 0 && two > 0) {
-                info.innerHTML = `<p>Good Job, text me "I have completed the first site", along with a photo of this screen for your next quest. Good luck! </p>`
-            	document.getElementById('goal').innerHTML = "Game Complete :)";
+	    if (mesh.position.y.toFixed(2) < 0) {
+	        var shdata = document.getElementById('goal').innerHTML;
+		if (shdata == "Goal: Go under Y = 0") {
+	                info.innerHTML = `<p>Good Job, text me "I have completed the first site", along with a photo of this screen for your next quest. Good luck! </p>`
+	            	document.getElementById('goal').innerHTML = "Game Complete :)";
+		}
             }
             //change spawn to X: -56.00,     Y: 26.29,     Z: -38.02
 
