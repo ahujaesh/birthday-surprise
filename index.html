@@ -26,7 +26,9 @@
       <script src="https://cdn.rawgit.com/schteppe/cannon.js/master/build/cannon.js"></script>
 
       <!-- Your existing game HTML content -->
+  <div id="goal">
       <p id="goal">Goal: Get to the flag.</p>
+  </div>
 	
       <div id="info"></div>
 
@@ -1132,6 +1134,21 @@
 	        color: white;
 	      }
 	      #info {
+	        font-family: monospace;
+	        font-weight: normal;
+	        position: absolute;
+	        top: 20px;
+	        left: 50%;
+	        width: 100%;
+	        text-align: right;
+	        transform: translateX(-50%);
+	        -webkit-transform: translateX(-50%);
+	        font-size: 14px;
+	        z-index: 289;
+	        background: black;
+	      }
+
+	      #goal {
 	        font-family: monospace;
 	        font-weight: normal;
 	        position: absolute;
