@@ -1030,11 +1030,35 @@
       case 'ArrowRight':
         this.onMove.call(this.game, 0, 1);
         break;
+      case 's':
+        this.onMove.call(this.game, -1, 0);
+        break;
+      case 'w':
+        this.onMove.call(this.game, 1, 0);
+        break;
+      case 'a':
+        this.onMove.call(this.game, 0, -1);
+        break;
+      case 'd':
+        this.onMove.call(this.game, 0, 1);
+        break;
+      case 'S':
+        this.onMove.call(this.game, -1, 0);
+        break;
+      case 'W':
+        this.onMove.call(this.game, 1, 0);
+        break;
+      case 'A':
+        this.onMove.call(this.game, 0, -1);
+        break;
+      case 'D':
+        this.onMove.call(this.game, 0, 1);
+        break;
     }
   }
 
   handleKeyUp(evt) {
-    if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(evt.key)) {
+    if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'w', 'a', 's', 'd', 'W', 'A', 'S', 'D'].includes(evt.key)) {
       this.onMove.call(this.game, 0, 0);
     }
   }
