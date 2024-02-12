@@ -293,21 +293,21 @@
 
 
                  var rev = true;
-                var cols = [{
+                var cols = [{ // tune these values to change the landscape's hues. can use rgb or hex
                   stop: 0,
-                  color: new THREE.Color('#B0E0E6')
+                  color: new THREE.Color('rgb(250, 250, 250)')
                 }, {
                   stop: .25,
-                  color: new THREE.Color('#CD853F')
+                  color: new THREE.Color('rgb(100, 222, 0)')
                 }, {
                   stop: .5,
-                  color: new THREE.Color('#EEE8AA')
+                  color: new THREE.Color('rgb(74, 252, 0)')
                 }, {
                   stop: .75,
-                  color: new THREE.Color('#bf8040')
+                  color: new THREE.Color('rgb(82, 153, 0)')
                 }, {
                   stop: 1,
-                  color: new THREE.Color('#666')
+                  color: new THREE.Color('rgb(82, 136, 76)')
                 }];
 
                 setGradient(geometry, cols, 'z', rev);
@@ -482,7 +482,7 @@
 
 
           //===================================================== add front & back lighting
-         var light = new THREE.DirectionalLight( new THREE.Color("gray"), 1);
+         var light = new THREE.DirectionalLight( new THREE.Color("grey"), 1);
          light.position.set(1, 1, 1).normalize();
          scene.add(light);
 
@@ -1030,24 +1030,10 @@ function updateDrive(forward = js.forward, turn = js.turn) {
 
 
            //display coordinates
-            info.innerHTML = `<span>X:</span>${mesh.position.x.toFixed(2)} <span>Y:</span>${mesh.position.y.toFixed(2)} <span>Z:</span>${mesh.position.z.toFixed(2)}`
+            //info.innerHTML = `<span>X:</span>${mesh.position.x.toFixed(2)} <span>Y:</span>${mesh.position.y.toFixed(2)} <span>Z:</span>${mesh.position.z.toFixed(2)}`
 
             // flag test one : X: 10.15,     Y: -0.73,     Z: 50.07
 
-
-            if (mesh.position.x.toFixed(2) > 0 && mesh.position.x.toFixed(2) < 50 && mesh.position.y.toFixed(2) > -50 && mesh.position.y.toFixed(2) < 50 && mesh.position.z.toFixed(2) > 35 && mesh.position.z.toFixed(2) < 70) {
-                info.innerHTML = `<p>Good job, you have completed the first quest. Next, climb a mountain over Y = 30. Good luck!</p>`
-                document.getElementById('goal').innerHTML = "Goal: Climb a mountain";
-            }
-
-            if (mesh.position.y.toFixed(2) > 30) {
-	        var shdata = document.getElementById('goal').innerHTML;
-		if (shdata == "Goal: Climb a mountain" || shdata == "Goal: Go under Y = 0") {
-			info.innerHTML = `<p>Good job, you have completed the second quest. Next, find a valley under Y = 0 and enter it. Good luck!</p>`
-			document.getElementById('goal').innerHTML = "Goal: Go under Y = 0";
-
-		}
-            }
 
 	    if (mesh.position.y.toFixed(2) < 0) {
 	        var shdata = document.getElementById('goal').innerHTML;
