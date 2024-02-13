@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Birthday Surprise Part 2</title>
+  <title>Birthday Surprise</title>
   <link rel="icon" type="image/x-icon" href="favicon.png">
 
   <!-- Three.js scripts -->
@@ -28,6 +28,11 @@
   <!-- Your existing game HTML content -->
   <div id="goal">
     <p id="goal">Goal: Find all the dragon eggs!</p>
+  </div>
+  <div>
+    <h1 id="score">Eggs found: 0</h1>
+    <button id="found-button">I found an egg!</button>
+
   </div>
   <div id="jumpscare">
   </div>
@@ -798,16 +803,6 @@
               mesh.position.y = intersects && intersects[0] ? intersects[0].point.y + 0.1 : 30;
 
 
-                  //raycast flag
-                  var raycaster2 = new THREE.Raycaster(flagLocation.position, new THREE.Vector3(0, -1, 0));
-                  var intersects2 = raycaster2.intersectObject(terrainBody.threemesh.children[0]);
-
-
-                  //position objects ontop of the terrain
-                  flagLocation.position.y = intersects2 && intersects2[0] ? intersects2[0].point.y + .5 : 30;
-                  flagLight.position.y = flagLocation.position.y + 50;
-                  flagLight.position.x = flagLocation.position.x + 5
-                  flagLight.position.z = flagLocation.position.z;
 
 
 
@@ -1023,8 +1018,24 @@ function updateDrive(forward = js.forward, turn = js.turn) {
 
 
 
+          const loaderEgg = new THREE.GLTFLoader();
 
-
+<!--// Load the GLTF model-->
+<!--loaderEgg.load(-->
+<!--    'https://raw.githubusercontent.com/ahujaesh/birthday-surprise/main/Dragon_egg_with_a_floating_sphere_inside_V2.gltf',-->
+<!--    (gltf) => {-->
+<!--        scene.add(gltf.scene); // Add the loaded model to the scene-->
+<!--        // Position and scale the model as needed-->
+<!--        gltf.scene.scale.set(0.5, 0.5, 0.5);-->
+<!--        gltf.scene.position.set(0, 0, -2);-->
+<!--    },-->
+<!--    (xhr) => {-->
+<!--        console.log((xhr.loaded / xhr.total) * 100 + '% loaded');-->
+<!--    },-->
+<!--    (error) => {-->
+<!--        console.error('An error occurred:', error);-->
+<!--    }-->
+<!--);-->
 
 
 
@@ -1078,6 +1089,20 @@ function updateDrive(forward = js.forward, turn = js.turn) {
           runGame();
         });
 
+
+      document.getElementById('found-button').addEventListener('click', function () {
+        var egg = document.getElementById('score');
+        var eggCount = parseInt(egg.innerText.match(/\d+/)[0]);
+
+        if (eggCount < 6) {
+          eggCount++; // Increment the egg count
+          egg.innerHTML = `<h4>Eggs found: ${eggCount}</h4>`;
+        } else {
+          egg.innerHTML = `<h4>Eggs found: 7!</h4>`;
+        }
+      });
+
+
         document.getElementById('okay-button2').addEventListener('click', function () {
           document.getElementById('overlay2').style.display = 'none';
 
@@ -1123,6 +1148,10 @@ function updateDrive(forward = js.forward, turn = js.turn) {
 
 	      #info span {
 	        color: wheat;
+	      }
+
+	      #score{
+	        text-align: center;
 	      }
 
 <!--	      #overlay2 {-->
