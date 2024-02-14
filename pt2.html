@@ -30,7 +30,7 @@
     <p id="goal">Goal: Find all the dragon eggs!</p>
   </div>
   <div id="eggs">
-    <h1 id="score">Eggs found: 0</h1>
+    <h4 id="score">Eggs found: 0</h4>
     <button id="found-button">I found an egg!</button>
 
   </div>
@@ -46,7 +46,6 @@
       <br>
       <br>
       <p>	Instructions: Now that you have completed the tutorial page (If you haven't go <a href="https://ahujaesh.github.io/birthday-surprise/">here</a>), you can be loaded into the actual world. In this game, a mother dragon has lost all of her dragon eggs, and it is up to you to find all seven of them. The controls are the same as the tutorial. Good luck!</p>
-      <!-- Add any other instructions or information here -->
       <br>
       <br>
       <br>
@@ -54,26 +53,6 @@
       <p>Have Fun :)</p>
     </div>
   </div>
-
-<!--  <div id="overlay2">-->
-<!--    <div id="modal-content2" style="z-index: 289;">-->
-<!--      <br>-->
-<!--      <br>-->
-<!--      <br>-->
-<!--      <br>-->
-<!--      <br>-->
-<!--      <br>-->
-<!--      <p>	Instructions: Now that you have completed the tutorial, you are about to enter the actual game. Movement and scoring is the same as the tutorial. Good luck!</p>-->
-<!--      &lt;!&ndash; Add any other instructions or information here &ndash;&gt;-->
-<!--      <br>-->
-<!--      <br>-->
-<!--      <br>-->
-<!--      <button id="okay-button2"><a href="https://ahujaesh.github.io/birthday-surprise/pt2">I'm ready to begin the game</a></button>-->
-
-<!--      <p> Hosted on Github Pages.</p>-->
-<!--      <p>Have Fun :)</p>-->
-<!--    </div>-->
-<!--  </div>-->
 
   <script>
           // Placeholder for your game logic
@@ -1149,24 +1128,32 @@ function updateDrive(forward = js.forward, turn = js.turn) {
 
 	      #info span {
 	        color: wheat;
+                z-index: 289;
+
 	      }
 
 	      #score{
 	        text-align: center;
+           	 z-index: 289;
+            
 	      }
 
 	      #eggs {
 	        display: none;
+            	z-index: 289;
 	      }
 
 	      button {
 		color: white;
 		background-color: blue;
+        	z-index: 289;
+        	border-radius: 12px;
 	      }
+            
+            #found-button{
+            	float: right;
+            }
 
-<!--	      #overlay2 {-->
-<!--	        display: none;-->
-<!--	      }-->
   </style>
 </head>
 <body>
