@@ -29,7 +29,7 @@
   <div id="goal">
     <p id="goal">Goal: Find all the dragon eggs!</p>
   </div>
-  <div>
+  <div id="eggs">
     <h1 id="score">Eggs found: 0</h1>
     <button id="found-button">I found an egg!</button>
 
@@ -1083,8 +1083,9 @@ function updateDrive(forward = js.forward, turn = js.turn) {
         document.getElementById('okay-button').addEventListener('click', function () {
           document.getElementById('overlay').style.display = 'none';
           // Call the function containing your game logic after the user clicks "Okay"
-	  // var div = document.getElementById(goal);
-   //  	  div.style.display = 'block';
+	      var eggs = document.getElementById('eggs');
+          eggs.style.display = 'block';
+
 
           runGame();
         });
@@ -1152,6 +1153,10 @@ function updateDrive(forward = js.forward, turn = js.turn) {
 
 	      #score{
 	        text-align: center;
+	      }
+
+	      #eggs {
+	        display: none;
 	      }
 
 <!--	      #overlay2 {-->
