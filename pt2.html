@@ -69,10 +69,6 @@
                 renderer.shadowMap.enabled = true;
                 renderer.shadowMap.type = THREE.PCFSoftShadowMap; // default THREE.PCFShadowMap
 
-                // LIGHTS
-        /*        const ambient = new THREE.AmbientLight( 0x888888 );
-                this.scene.add( ambient );*/
-
                 const light = new THREE.DirectionalLight( 0xdddddd, .25, 1 );
                 light.position.set( 3, 10, 4 );
                 light.target.position.set( 0, 0, 0 );
@@ -80,14 +76,6 @@
 
                 this.sun = light;
                 this.scene.add(light);
-
-
-
-
-
-
-
-
 
             }
 
@@ -333,22 +321,6 @@
                   wireframe: false
                 });
 
-
-
-                //Set a different color on each face
-                /*for (var i = 0, j = geometry.faces.length; i < j; i++) {
-                  geometry.faces[i].color = new THREE.Color(
-                    "hsl(" + Math.floor(Math.random() * 360) + ",50%,50%)"
-                  );
-                }*/
-
-              /*  var mat = new THREE.MeshLambertMaterial({
-                  side: THREE.BackSide,
-                  vertexColors: THREE.FaceColors,
-                  side: THREE.DoubleSide,
-                  wireframe: false,
-                  color: new THREE.Color('wheat')
-                });*/
                 mesh = new THREE.Mesh(geometry, mat);
                 break;
 
@@ -409,15 +381,6 @@
         }
 
 
-
-
-
-
-
-
-
-
-
         //===================================================== scene
         var scene = new THREE.Scene();
 
@@ -461,19 +424,10 @@
             world.addContactMaterial(wheelGroundContactMaterial);
 
 
-
-
-
-
           //===================================================== add front & back lighting
          var light = new THREE.DirectionalLight( new THREE.Color("grey"), 1);
          light.position.set(1, 1, 1).normalize();
          scene.add(light);
-
-
-
-
-
 
 
 
@@ -527,7 +481,6 @@
 
 
         //=========================================================================================== add tweening
-        //https://greensock.com/forums/topic/16993-threejs-properties/
         Object.defineProperties(THREE.Object3D.prototype, {
           x: {
             get: function() {
@@ -581,11 +534,6 @@
 
 
 
-
-
-
-
-
         //===================================================== model
         var geometry = new THREE.BoxBufferGeometry( .5, 1, .5 );
          /* We change the pivot point to be at the bottom of the cube, instead of its center. So we translate the whole geometry. */
@@ -600,8 +548,6 @@
         light.castShadow = true;
         light.target = mesh;//shadow will follow mesh
         mesh.add( light );
-
-
 
 
         //===================================================== add Model
@@ -638,9 +584,6 @@
           mixers.push(mixer);
 
         });
-
-
-
 
 
 
@@ -733,14 +676,6 @@
 
           var matrix = data[ 0 ];
 
-          //console.log(matrix);
-
-
-
-
-        //Array(128) [ (128) […], (128) […], (128) […], (128) […], (128) […], (128) […], (128) […], (128) […], (128) […], (128) […], … ]
-
-
             const terrainShape = new CANNON.Heightfield(matrix, {elementSize: 10});
             const terrainBody = new CANNON.Body({mass: 0});
 
@@ -758,17 +693,6 @@
             raycastHelperMesh = new THREE.Mesh( raycastHelperGeometry, new THREE.MeshNormalMaterial() );
             scene.add( raycastHelperMesh );
 
-
-
-            //console.log( terrainBody.threemesh.children[0] );
-
-
-
-
-
-
-
-
             check = function(){
 
               var raycaster = new THREE.Raycaster(mesh.position, new THREE.Vector3(0, -1, 0));
@@ -780,9 +704,6 @@
               }
               //position objects ontop of the terrain
               mesh.position.y = intersects && intersects[0] ? intersects[0].point.y + 0.1 : 30;
-
-
-
 
 
             }//end check
@@ -951,8 +872,6 @@ function updateDrive(forward = js.forward, turn = js.turn) {
 }
 
 
-
-
         //===================================================== 3rd person view
         var followCam = new THREE.Object3D();
         followCam.position.copy(camera.position);
@@ -1045,11 +964,6 @@ function updateDrive(forward = js.forward, turn = js.turn) {
             }
             //change spawn to X: -56.00,     Y: 26.29,     Z: -38.02
 
-
-
-
-
-
         })();
           } // end game logic
 
@@ -1097,6 +1011,7 @@ function updateDrive(forward = js.forward, turn = js.turn) {
 	        background-color:#87ceeb;
 	        color: white;
 	      }
+	  
 	      #info {
 	        font-family: monospace;
 	        font-weight: normal;
