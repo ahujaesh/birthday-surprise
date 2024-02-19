@@ -24,14 +24,12 @@
 
   <!-- Cannon.js script -->
   <script src="https://cdn.rawgit.com/schteppe/cannon.js/master/build/cannon.js"></script>
-
   <div id="goal">
     <p id="goal">Goal: Find all the dragon eggs!</p>
   </div>
   <div id="eggs">
     <h4 id="score">Eggs found: 0</h4>
     <button id="found-button">I found an egg!</button>
-
   </div>
   <div id="jumpscare">
   </div>
@@ -987,15 +985,32 @@ function updateDrive(forward = js.forward, turn = js.turn) {
           document.getElementById('goal').innerHTML = "opening world";
             //new dragon code here in a function
         });
-      </script> // End Javascript
-  <style> // CSS
+     </script><!-- End Javascript -->
+  <!-- CSS -->
+  <style>
+          html {
+            z-index: 0;
+          }
+
 	      body {
 	        margin: 0;
 	        overflow: hidden;
 	        background-color:#87ceeb;
 	        color: white;
+              position: relative; /* Add position property */
+
+                        z-index: 0;
+
 	      }
-	  
+	      #info,
+          #goal,
+          #score,
+          #eggs,
+          button {
+            background-color: transparent;
+            z-index: 289;
+          }
+
 	      #info {
 	        font-family: monospace;
 	        font-weight: normal;
@@ -1034,7 +1049,7 @@ function updateDrive(forward = js.forward, turn = js.turn) {
 	      #score{
 	        text-align: center;
            	 z-index: 289;
-            
+
 	      }
 
 	      #eggs {
@@ -1045,15 +1060,20 @@ function updateDrive(forward = js.forward, turn = js.turn) {
 	      button {
 		color: white;
 		background-color: blue;
-        	z-index: 289;
+        	z-index: 300;
         	border-radius: 12px;
 	      }
             
-            #found-button{
-            	float: right;
-            }
-
-  </style> // End CSS
+          #found-button{
+              float: right;
+          }
+        #scene-container {
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 200; /* Set a z-index lower than text and button */
+        }
+  </style><!-- End CSS -->
 </head>
 <body>
 </body>
