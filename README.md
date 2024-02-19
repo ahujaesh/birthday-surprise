@@ -7,7 +7,7 @@ This repository contains 2 main .html files, that both use Internal CSS and Java
 - File one ([index.html](https://github.com/ahujaesh/birthday-surprise/blob/main/index.html)):
     - This is the default landing page for the website and serves as the introduction page
     - Uses Internal CSS and Javascript
-    - It contains a tutorial written using [THREE.js](https://en.m.wikipedia.org/wiki/Three.js)
+    - It contains a tutorial written using [THREE.js](https://en.m.wikipedia.org/wiki/Three.js), HTML, CSS and Javascript
       - Within this tutorial, you complete three quests  to learn how to move around in the three.js world
     - Upon competition, it leads you into the next page for the main quest
     - You can view this file [here](https://ahujaesh.github.io/birthday-surprise/)

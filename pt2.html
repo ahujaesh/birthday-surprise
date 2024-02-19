@@ -25,7 +25,6 @@
   <!-- Cannon.js script -->
   <script src="https://cdn.rawgit.com/schteppe/cannon.js/master/build/cannon.js"></script>
 
-  <!-- Your existing game HTML content -->
   <div id="goal">
     <p id="goal">Goal: Find all the dragon eggs!</p>
   </div>
@@ -55,9 +54,7 @@
   </div>
 
   <script>
-          // Placeholder for your game logic
           function runGame() {
-              // Replace the following line with your actual game logic
 		      const randnum = (min, max) => Math.round(Math.random() * (max - min) + min);
 
         class CannonHelper{
@@ -403,11 +400,7 @@
 
             var helper = new CannonHelper(scene);
             var physics = {};
-
-
-                const world = new CANNON.World();
-
-
+            const world = new CANNON.World();
             world.broadphase = new CANNON.SAPBroadphase(world);
             world.gravity.set(0, -10, 0);
             world.defaultContactMaterial.friction = 0;
@@ -666,9 +659,7 @@
         }();
 
 
-
-
-        //can add an array if things
+        //can add an array of things
         var check;
         Promise.all( [
           img2matrix.fromUrl( 'https://upload.wikimedia.org/wikipedia/commons/5/57/Heightmap.png', sizeX, sizeY, minHeight, maxHeight )(),
@@ -798,6 +789,7 @@
 
     this.onMove.call(this.game, 0, 0);
   }
+//arrow keys plus WASD
 
   handleKeyDown(evt) {
     switch (evt.key) {
@@ -898,9 +890,6 @@ function updateDrive(forward = js.forward, turn = js.turn) {
             let delta = clock.getDelta();
             mixers.map(x=>x.update(delta));
 
-
-
-
             /*cannon*/
           const now = Date.now();
           if (lastTime===undefined) lastTime = now;
@@ -913,8 +902,6 @@ function updateDrive(forward = js.forward, turn = js.turn) {
 
 
           if(check) check();
-
-
 
           const loaderEgg = new THREE.GLTFLoader();
 
@@ -934,9 +921,6 @@ function updateDrive(forward = js.forward, turn = js.turn) {
 <!--        console.error('An error occurred:', error);-->
 <!--    }-->
 <!--);-->
-
-
-
 
            //display coordinates
             //info.innerHTML = `<span>X:</span>${mesh.position.x.toFixed(2)} <span>Y:</span>${mesh.position.y.toFixed(2)} <span>Z:</span>${mesh.position.z.toFixed(2)}`
@@ -1003,8 +987,8 @@ function updateDrive(forward = js.forward, turn = js.turn) {
           document.getElementById('goal').innerHTML = "opening world";
             //new dragon code here in a function
         });
-      </script>
-  <style>
+      </script> // End Javascript
+  <style> // CSS
 	      body {
 	        margin: 0;
 	        overflow: hidden;
@@ -1069,7 +1053,7 @@ function updateDrive(forward = js.forward, turn = js.turn) {
             	float: right;
             }
 
-  </style>
+  </style> // End CSS
 </head>
 <body>
 </body>
