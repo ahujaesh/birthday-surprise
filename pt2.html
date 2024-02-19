@@ -54,6 +54,9 @@
     </div>
   </div>
 
+  <div id="scene-container"></div>
+
+
   <script>
           // Placeholder for your game logic
           function runGame() {
@@ -393,7 +396,11 @@
         renderer.shadowMap.enabled = true;
         renderer.shadowMapSoft = true; // Shadow
         renderer.shadowMapType = THREE.PCFShadowMap; //Shadow
-        document.body.appendChild( renderer.domElement );
+        // Find the container by ID
+        const container = document.getElementById('scene-container');
+
+        // Append the renderer's domElement to the container
+        container.appendChild(renderer.domElement);
 
 
           //===================================================== cannon
@@ -940,12 +947,15 @@ function updateDrive(forward = js.forward, turn = js.turn) {
 renderer2.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer2.domElement);
 
+// Create a sphere
 const geometry2 = new THREE.SphereGeometry(15, 32, 16);
 const material2 = new THREE.MeshBasicMaterial({
   color: 0xffff00
 });
 const sphere2 = new THREE.Mesh(geometry2, material2);
-this.scene.add(sphere2);
+
+// Add the sphere to the scene
+scene.add(sphere2);
 
 
 
