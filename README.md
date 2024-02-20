@@ -30,8 +30,9 @@ This repository contains 2 main .html files, that both use Internal CSS and Java
   - Please ignore the files in .idea, my main editor, Android Studio for Windows, added them and I don't know why. If you know, feel free to shoot me an email.
 - Other files (.HTML)
      - [eggsTesting.html](https://github.com/ahujaesh/birthday-surprise/blob/main/eggsTesting.html)
-       - used to test the eggs placement, and will eventually be merged into [pt2.html](https://github.com/ahujaesh/birthday-surprise/blob/main/pt2.html)
+       - This is used to test the eggs placement, and will eventually be merged into [pt2.html](https://github.com/ahujaesh/birthday-surprise/blob/main/pt2.html)
+       - You can view this [here](https://ahujaesh.github.io/birthday-surprise/eggsTesting.html).
     - [testing.html](https://github.com/ahujaesh/birthday-surprise/blob/main/.idea/testing.html)
-      - Just holding some testing code
+      - Just holding some testing code.
     - [html.html](https://github.com/ahujaesh/birthday-surprise/blob/main/.idea/html.html)
-      - Also Just holding some testing code
+      - Also Just holding some testing code.
