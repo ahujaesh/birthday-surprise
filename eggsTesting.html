@@ -1024,8 +1024,8 @@ var geometry = new THREE.BoxBufferGeometry( 0.15, 2, 0.15 );
 
         flagLocation5 = new THREE.Mesh( geometry, material );
         scene.add(flagLocation5);
-        flagLocation5.position.x = 140; // left from spawn if positive, right is negative
-        flagLocation5.position.y = 43; // height
+        flagLocation5.position.x = 150; // left from spawn if positive, right is negative
+        flagLocation5.position.y = 53; // height
         flagLocation5.position.z = 210; // away from the spawn point
         flagLocation5.rotateY(Math.PI);
 
@@ -1042,6 +1042,56 @@ var geometry = new THREE.BoxBufferGeometry( 0.15, 2, 0.15 );
         cylinder5.geometry.center();
         cylinder5.castShadow = true;
         flagLocation5.add(cylinder5);
+
+
+        // sixth egg ------------------------------------
+
+
+        flagLocation6 = new THREE.Mesh( geometry, material );
+        scene.add(flagLocation6);
+        flagLocation6.position.x = 165; // left from spawn if positive, right is negative
+        flagLocation6.position.y = 25; // height
+        flagLocation6.position.z = 410; // away from the spawn point
+        flagLocation6.rotateY(Math.PI);
+
+
+
+
+        //flag pole
+        //first and second term is width?
+        //third term is height
+        // fourth term is the amount of sides
+        var geometry6 = new THREE.CylinderGeometry(1, 1, 3, 60);
+        var material6 = new THREE.MeshPhongMaterial({color: new THREE.Color('purple')});
+        var cylinder6 = new THREE.Mesh(geometry6, material6);
+        cylinder6.geometry.center();
+        cylinder6.castShadow = true;
+        flagLocation6.add(cylinder6);
+
+
+        // seventh egg ------------------------------------
+
+
+        flagLocation7 = new THREE.Mesh( geometry, material );
+        scene.add(flagLocation7);
+        flagLocation7.position.x = 166; // left from spawn if positive, right is negative
+        flagLocation7.position.y = 50; // height
+        flagLocation7.position.z = 410; // away from the spawn point
+        flagLocation7.rotateY(Math.PI);
+
+
+
+
+        //flag pole
+        //first and second term is width?
+        //third term is height
+        // fourth term is the amount of sides
+        var geometry7 = new THREE.CylinderGeometry(1, 1, 3, 60);
+        var material7 = new THREE.MeshPhongMaterial({color: new THREE.Color('pink')});
+        var cylinder7 = new THREE.Mesh(geometry7, material7);
+        cylinder7.geometry.center();
+        cylinder7.castShadow = true;
+        flagLocation7.add(cylinder7);
 
 
            //display coordinates
