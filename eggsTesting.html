@@ -60,6 +60,40 @@
 
 
     <script>
+	    function setCookie(cname,cvalue,exdays) {
+		  const d = new Date();
+		  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+		  let expires = "expires=" + d.toUTCString();
+		  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+		}
+		
+		function getCookie(cname) {
+		  let name = cname + "=";
+		  let decodedCookie = decodeURIComponent(document.cookie);
+		  let ca = decodedCookie.split(';');
+		  for(let i = 0; i < ca.length; i++) {
+		    let c = ca[i];
+		    while (c.charAt(0) == ' ') {
+		      c = c.substring(1);
+		    }
+		    if (c.indexOf(name) == 0) {
+		      return c.substring(name.length, c.length);
+		    }
+		  }
+		  return "";
+		}
+		
+		// function checkCookie() {
+		//   let user = getCookie("username");
+		//   if (user != "") {
+		//     alert("Welcome again " + user);
+		//   } else {
+		//      user = prompt("Please enter your name:","");
+		//      if (user != "" && user != null) {
+		//        setCookie("username", user, 30);
+		//      }
+		//   }
+		// }
           // Placeholder for your game logic
           function runGame() {
               // Replace the following line with your actual game logic
@@ -1005,10 +1039,24 @@ function updateDrive(forward = js.forward, turn = js.turn) {
       document.getElementById('found-button').addEventListener('click', function () {
         var egg = document.getElementById('score');
         var eggCount = parseInt(egg.innerText.match(/\d+/)[0]);
-
+	if (eggCount == 0) {
+	  let user = getCookie("username");
+	  if (user != "") {
+    		eggCount = user;
+	  }
+	}
         if (eggCount < 6) {
           eggCount++; // Increment the egg count
           egg.innerHTML = `<h4>Eggs found: ${eggCount}</h4>`;
+	  let user = getCookie("username");
+	  if (user != "") {
+    		alert("Score Saved");
+	  } else {
+	     user = eggCount;
+	     if (user != "" && user != null) {
+	       setCookie("username", user, 30);
+	     }
+	  }
         } else {
           egg.innerHTML = `<h4>Eggs found: 7!</h4>`;
         }
