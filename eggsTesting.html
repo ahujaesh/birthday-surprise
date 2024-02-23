@@ -923,180 +923,8 @@ function updateDrive(forward = js.forward, turn = js.turn) {
 
           if(check) check();
 
-//           //first egg -------------------------------------------------------
-
-// var geometry = new THREE.BoxBufferGeometry( 0.15, 2, 0.15 );
-//           geometry.applyMatrix(new THREE.Matrix4().makeTranslation(0, 1, 0));
-//         var material = new THREE.MeshNormalMaterial({transparent: true,opacity:0});
-//         flagLocation = new THREE.Mesh( geometry, material );
-//         scene.add(flagLocation);
-//         flagLocation.position.x = 10;
-//         flagLocation.position.z = 50;
-//         flagLocation.rotateY(Math.PI);
-
-
-
-
-//         //flag pole
-//         //first and second term is width?
-//         //third term is height
-//         // fourth term is the amount of sides
-//         var geometry = new THREE.CylinderGeometry(1, 1, 3, 60);
-//         var material = new THREE.MeshPhongMaterial({color: new THREE.Color('red')});
-//         var cylinder = new THREE.Mesh(geometry, material);
-//         cylinder.geometry.center();
-//         cylinder.castShadow = true;
-//         flagLocation.add(cylinder);
-
-//         // second egg ------------------------------------
-
-
-//         flagLocation2 = new THREE.Mesh( geometry, material );
-//         scene.add(flagLocation2);
-//         flagLocation2.position.x = 40; // left from spawn if positive, right is negative
-//         flagLocation2.position.y = 10; // height
-//         flagLocation2.position.z = 200; // away from the spawn point
-//         flagLocation2.rotateY(Math.PI);
-
-
-
-
-//         //flag pole
-//         //first and second term is width?
-//         //third term is height
-//         // fourth term is the amount of sides
-//         var geometry2 = new THREE.CylinderGeometry(1, 1, 3, 60);
-//         var material2 = new THREE.MeshPhongMaterial({color: new THREE.Color('orange')});
-//         var cylinder2 = new THREE.Mesh(geometry2, material2);
-//         cylinder2.geometry.center();
-//         cylinder2.castShadow = true;
-//         flagLocation2.add(cylinder2);
-
-//         // third egg ------------------------------------
-
-
-//         flagLocation3 = new THREE.Mesh( geometry, material );
-//         scene.add(flagLocation3);
-//         flagLocation3.position.x = 90; // left from spawn if positive, right is negative
-//         flagLocation3.position.y = 32; // height
-//         flagLocation3.position.z = 210; // away from the spawn point
-//         flagLocation3.rotateY(Math.PI);
-
-
-
-
-//         //flag pole
-//         //first and second term is width?
-//         //third term is height
-//         // fourth term is the amount of sides
-//         var geometry3 = new THREE.CylinderGeometry(1, 1, 3, 60);
-//         var material3 = new THREE.MeshPhongMaterial({color: new THREE.Color('yellow')});
-//         var cylinder3 = new THREE.Mesh(geometry3, material3);
-//         cylinder3.geometry.center();
-//         cylinder3.castShadow = true;
-//         flagLocation3.add(cylinder3);
-
-
-//         // fourth egg ------------------------------------
-
-
-//         flagLocation4 = new THREE.Mesh( geometry, material );
-//         scene.add(flagLocation4);
-//         flagLocation4.position.x = 130; // left from spawn if positive, right is negative
-//         flagLocation4.position.y = 39; // height
-//         flagLocation4.position.z = 210; // away from the spawn point
-//         flagLocation4.rotateY(Math.PI);
-
-
-
-
-//         //flag pole
-//         //first and second term is width?
-//         //third term is height
-//         // fourth term is the amount of sides
-//         var geometry4 = new THREE.CylinderGeometry(1, 1, 3, 60);
-//         var material4 = new THREE.MeshPhongMaterial({color: new THREE.Color('green')});
-//         var cylinder4 = new THREE.Mesh(geometry4, material4);
-//         cylinder4.geometry.center();
-//         cylinder4.castShadow = true;
-//         flagLocation4.add(cylinder4);
-
-// // fifth egg ------------------------------------
-
-
-//         flagLocation5 = new THREE.Mesh( geometry, material );
-//         scene.add(flagLocation5);
-//         flagLocation5.position.x = 150; // left from spawn if positive, right is negative
-//         flagLocation5.position.y = 46; // height
-//         flagLocation5.position.z = 210; // away from the spawn point
-//         flagLocation5.rotateY(Math.PI);
-
-
-
-
-//         //flag pole
-//         //first and second term is width?
-//         //third term is height
-//         // fourth term is the amount of sides
-//         var geometry5 = new THREE.CylinderGeometry(1, 1, 3, 60);
-//         var material5 = new THREE.MeshPhongMaterial({color: new THREE.Color('blue')});
-//         var cylinder5 = new THREE.Mesh(geometry5, material5);
-//         cylinder5.geometry.center();
-//         cylinder5.castShadow = true;
-//         flagLocation5.add(cylinder5);
-
-
-//         // sixth egg ------------------------------------
-
-
-//         flagLocation6 = new THREE.Mesh( geometry, material );
-//         scene.add(flagLocation6);
-//         flagLocation6.position.x = 165; // left from spawn if positive, right is negative
-//         flagLocation6.position.y = 5; // height
-//         flagLocation6.position.z = 410; // away from the spawn point
-//         flagLocation6.rotateY(Math.PI);
-
-
-
-
-//         //flag pole
-//         //first and second term is width?
-//         //third term is height
-//         // fourth term is the amount of sides
-//         var geometry6 = new THREE.CylinderGeometry(1, 1, 3, 60);
-//         var material6 = new THREE.MeshPhongMaterial({color: new THREE.Color('purple')});
-//         var cylinder6 = new THREE.Mesh(geometry6, material6);
-//         cylinder6.geometry.center();
-//         cylinder6.castShadow = true;
-//         flagLocation6.add(cylinder6);
-
-
-//         // seventh egg ------------------------------------
-
-
-//         flagLocation7 = new THREE.Mesh( geometry, material );
-//         scene.add(flagLocation7);
-//         flagLocation7.position.x = 166; // left from spawn if positive, right is negative
-//         flagLocation7.position.y = 30; // height
-//         flagLocation7.position.z = 450; // away from the spawn point
-//         flagLocation7.rotateY(Math.PI);
-
-
-
-
-//         //flag pole
-//         //first and second term is width?
-//         //third term is height
-//         // fourth term is the amount of sides
-//         var geometry7 = new THREE.CylinderGeometry(1, 1, 3, 60);
-//         var material7 = new THREE.MeshPhongMaterial({color: new THREE.Color('pink')});
-//         var cylinder7 = new THREE.Mesh(geometry7, material7);
-//         cylinder7.geometry.center();
-//         cylinder7.castShadow = true;
-//         flagLocation7.add(cylinder7);
-
-//         // end eggs ---------------------------------
-
+		
+		// eggs--------------------------------------------------------------
 		function createFlagLocation(x, y, z, color) {
 		    var sphereGeometry = new THREE.SphereBufferGeometry(0.7, 32, 32);
 		    var sphereMaterial = new THREE.MeshPhongMaterial({ color: new THREE.Color(color) });
@@ -1111,6 +939,10 @@ function updateDrive(forward = js.forward, turn = js.turn) {
 		    sphere.position.set(x, y, z);
 		    sphere.rotateY(Math.PI);
 		}
+
+		// X - moves object left from spawn if positive, negative moves it right
+		// Y - height (Positive up)
+		// Z - Distance away from the spawn point (Positive away, Negative closer)
 		
 		// Create flag locations
 		createFlagLocation(10, 0, 50, 'red');
@@ -1118,8 +950,9 @@ function updateDrive(forward = js.forward, turn = js.turn) {
 		createFlagLocation(90, 32, 210, 'yellow');
 		createFlagLocation(130, 39, 210, 'green');
 		createFlagLocation(150, 46, 210, 'blue');
-		createFlagLocation(165, 0, 410, 'purple');
-		createFlagLocation(166, 10, 460, 'pink');
+		createFlagLocation(165, 0, 405, 'purple');
+		createFlagLocation(166, 10, 465, 'pink');
+		// end eggs ----------------------------------------------------------
 		
 
 
