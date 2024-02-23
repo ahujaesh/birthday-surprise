@@ -50,6 +50,6 @@ This repository contains 2 main .html files, that both use Internal CSS and Java
     - [html.html](https://github.com/ahujaesh/birthday-surprise/blob/main/.idea/html.html)
       - Also Just holding some testing code.
 
-Credits:
+**Credits:**
 
 Credit to [Yugam Dhuriya (@pizza3)](https://github.com/pizza3) for inspo.
