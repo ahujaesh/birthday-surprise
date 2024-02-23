@@ -1,6 +1,18 @@
-A repository with the source code for the first part of my friend's birthday gift - hosted [here](https://ahujaesh.github.io/birthday-surprise/). If you see any errors or want to help, feel free to open an issue, fork this repository and start a pull request, or just email me here - [ahuja.eshaan0@gmail.com](mailto:ahuja.eshaan0@gmail.com)!
+# What is this?
 
-An overview of this repository:
+This is a repository with the source code for the first part of my friend's birthday gift - hosted [here](https://ahujaesh.github.io/birthday-surprise/) through GitHub Pages. If you see any errors or want to help, feel free to open an issue, fork this repository and start a pull request, or just email me here - [ahuja.eshaan0@gmail.com](mailto:ahuja.eshaan0@gmail.com)!
+
+# An overview of this repository:
+
+**Logic (How the website works):**
+
+This website used a three dimenstional rendering software called "THREE.js". This software allows the user to add Javascript commands in their code to render different objects to your scene, and I have used this software to render the word that you move around in. You can read more about THREE.js [here](https://discoverthreejs.com/).
+
+This website also uses some standard HTML elements such as ```<p>``` and the ```<h4>``` elements to convey information to the user, and these elements are updated using the ```.innerHTML``` syntax to respond to user input, along with ```<button>``` elements and ```<a>``` elements to gain input and advance users to the next site.
+
+Along with these, I also use many other code elements and am always looking to add more to improve the user experience.
+
+**Files and Documentation:**
 
 This repository contains 2 main .html files, that both use Internal CSS and Javascript for easy readability. It also contains some other files. I have outlined the purpose of each of these files below, along with a higherarchy of importance. If you have something to add, feel free to shoot me a PR or an Issue.
 
@@ -32,7 +44,7 @@ This repository contains 2 main .html files, that both use Internal CSS and Java
      - [eggsTesting.html](https://github.com/ahujaesh/birthday-surprise/blob/main/eggsTesting.html)
        - This is used to test the eggs placement, and will eventually be merged into [pt2.html](https://github.com/ahujaesh/birthday-surprise/blob/main/pt2.html)
            - UPDATE (Febuary 23, 2024): This was merged into pt2.html by [this](https://github.com/ahujaesh/birthday-surprise/commit/67f5d59f301ae8bc1d08e853359b1df430771611) commit on Febuary 22, 2024, and is now depreciated.
-       - You can view this [here](https://ahujaesh.github.io/birthday-surprise/eggsTesting.html).
+       - You can view the rendered result of this file [here](https://ahujaesh.github.io/birthday-surprise/eggsTesting.html).
     - [testing.html](https://github.com/ahujaesh/birthday-surprise/blob/main/.idea/testing.html)
       - Just holding some testing code.
     - [html.html](https://github.com/ahujaesh/birthday-surprise/blob/main/.idea/html.html)
