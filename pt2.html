@@ -25,7 +25,6 @@
     <!-- Cannon.js script -->
     <script src="https://cdn.rawgit.com/schteppe/cannon.js/master/build/cannon.js"></script>
 
-    <!-- Your existing game HTML content -->
     <div id="goal">
         <p id="goal">Goal: Find all the dragon eggs!</p>
     </div>
@@ -38,7 +37,7 @@
     <div id="pause" >
 	<h2>The game is paused.</h2>
 	<button id="unpause-button">Unpause</button>
-        <br> // coverthe entire screen
+        <br> // cover the entire screen
         <br>
         <br>
         <br>
@@ -164,9 +163,7 @@
 
 
     <script>
-          // Placeholder for your game logic
           function runGame() {
-              // Replace the following line with your actual game logic
 		      const randnum = (min, max) => Math.round(Math.random() * (max - min) + min);
 
         class CannonHelper{
@@ -671,7 +668,6 @@
 
         var loader = new THREE.GLTFLoader();
 
-        // convert to https://github.com/baronwatts/models/blob/master/girl-run.glb?
         loader.load( 'https://raw.githubusercontent.com/baronwatts/models/master/astronaut.glb', function ( object ) {
            object.scene.traverse( function( node ) {
               if ( node instanceof THREE.Mesh ) {
@@ -778,10 +774,6 @@
 
         }();
 
-
-
-
-        //can add an array if things
         var check;
         Promise.all( [
           img2matrix.fromUrl( 'https://upload.wikimedia.org/wikipedia/commons/5/57/Heightmap.png', sizeX, sizeY, minHeight, maxHeight )(),
@@ -797,8 +789,6 @@
             terrainBody.quaternion.setFromAxisAngle(new CANNON.Vec3(1, 0, 0), -Math.PI / 2);
             world.add(terrainBody);
             helper.addVisual(terrainBody, 'landscape');
-
-
 
             var raycastHelperGeometry = new THREE.CylinderGeometry( 0, 1, 5, 1.5 );
             raycastHelperGeometry.translate( 0, 0, 0 );
@@ -823,6 +813,7 @@
 
 
           });//end Promise
+		  
 
         //===================================================== Joystick
         class JoyStick {
@@ -912,7 +903,7 @@
     this.onMove.call(this.game, 0, 0);
   }
 
-  handleKeyDown(evt) {
+  handleKeyDown(evt) { // add support for arrow keys
     switch (evt.key) {
       case 'ArrowDown':
         this.onMove.call(this.game, -1, 0);
@@ -1029,12 +1020,11 @@ function updateDrive(forward = js.forward, turn = js.turn) {
 
 		
 		// eggs--------------------------------------------------------------
-		function createFlagLocation(x, y, z, color) {
+		function createFlagLocation(x, y, z, color) { // this function creates an egg at the coordinates passed to it. Ignore the name, as I borrowed it from another code document and I am too lazy to change it
 		    var sphereGeometry = new THREE.SphereBufferGeometry(0.7, 32, 32);
 		    var sphereMaterial = new THREE.MeshPhongMaterial({ color: new THREE.Color(color) });
 		    var sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
 		
-		    // Adjust the scale to make the spheres fatter
 		    sphere.scale.set(1.5, 3, 1.5);
 		
 		    sphere.castShadow = true;
@@ -1043,10 +1033,10 @@ function updateDrive(forward = js.forward, turn = js.turn) {
 		    sphere.position.set(x, y, z);
 		    sphere.rotateY(Math.PI);
 		}
-
-		// X - moves object left from spawn if positive, negative moves it right
-		// Y - height (Positive up)
-		// Z - Distance away from the spawn point (Positive away, Negative closer)
+		// coordinates key:
+		// X - moves object left from spawn if positive, negative moves it right from spawn
+		// Y - edits height of the object (Positive moves it up, negative moves it down)
+		// Z - edits distance away from the spawn point (Positive away, Negative closer)
 		
 		// Create flag locations
 		createFlagLocation(10, 0, 50, 'red');
@@ -1058,14 +1048,6 @@ function updateDrive(forward = js.forward, turn = js.turn) {
 		createFlagLocation(166, 8, 465, 'pink');
 		// end eggs ----------------------------------------------------------
 		
-
-
-           //display coordinates
-            //info.innerHTML = `<span>X:</span>${mesh.position.x.toFixed(2)} <span>Y:</span>${mesh.position.y.toFixed(2)} <span>Z:</span>${mesh.position.z.toFixed(2)}`
-
-            // flag test one : X: 10.15,     Y: -0.73,     Z: 50.07
-
-
 	    if (mesh.position.y.toFixed(2) < 0) {
 	        var shdata = document.getElementById('goal').innerHTML;
 		if (shdata == "Goal: Go under Y = 0" || shdata == "Tutorial Complete :)") {
@@ -1084,10 +1066,9 @@ function updateDrive(forward = js.forward, turn = js.turn) {
 
 		}
             }
-            //change spawn to X: -56.00,     Y: 26.29,     Z: -38.02
 
         })();
-          } // end game logic
+          } 
 
         // JavaScript to show the overlay when the page loads
         document.addEventListener('DOMContentLoaded', function () {
