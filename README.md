@@ -1,4 +1,4 @@
-A repository with the source code for the first part of my friend's birthday gift - hosted [here](https://ahujaesh.github.io/birthday-surprise/). If you see any errors or want to help, feel free to open an issue, pull request, or email me here - ahuja.eshaan0@gmail.com!
+A repository with the source code for the first part of my friend's birthday gift - hosted [here](https://ahujaesh.github.io/birthday-surprise/). If you see any errors or want to help, feel free to open an issue, fork this repository and start a pull request, or just email me here - [ahuja.eshaan0@gmail.com](mailto:ahuja.eshaan0@gmail.com)!
 
 An overview of this repository:
 
@@ -36,3 +36,7 @@ This repository contains 2 main .html files, that both use Internal CSS and Java
       - Just holding some testing code.
     - [html.html](https://github.com/ahujaesh/birthday-surprise/blob/main/.idea/html.html)
       - Also Just holding some testing code.
+
+Credits:
+
+Credit to [Yugam Dhuriya (@pizza3)](https://github.com/pizza3) for inspo.
