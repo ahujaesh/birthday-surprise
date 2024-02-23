@@ -1037,31 +1037,32 @@ function updateDrive(forward = js.forward, turn = js.turn) {
 
 
       document.getElementById('found-button').addEventListener('click', function () {
-        var egg = document.getElementById('score');
-        var eggCount = parseInt(egg.innerText.match(/\d+/)[0]);
-	if (eggCount == 0) {
-	  let user = getCookie("username");
-	  if (user != "") {
-    		eggCount = user;
-	  }
-	}
-        if (eggCount < 6) {
-          eggCount++; // Increment the egg count
-          egg.innerHTML = `<h4>Eggs found: ${eggCount}</h4>`;
-	  let user = getCookie("username");
-	  if (user != "") {
-    		alert("Score Saved");
-	  } else {
-	     user = eggCount;
-	     if (user != "" && user != null) {
-	       setCookie("username", user, 30);
-	     }
-	  }
-        } else {
-          egg.innerHTML = `<h4>Eggs found: 7!</h4>`;
-        }
-      });
+  var egg = document.getElementById('score');
+  var eggCount = parseInt(egg.innerText.match(/\d+/)[0]);
 
+  if (eggCount == 0) {
+    let user = getCookie("username");
+    if (user != "") {
+      eggCount = parseInt(user); // Parse the user value to an integer
+    }
+  }
+
+  if (eggCount < 6) {
+    eggCount++; // Increment the egg count
+    egg.innerHTML = `<h4>Eggs found: ${eggCount}</h4>`;
+    let user = getCookie("username");
+    if (user != "") {
+      alert("Score Saved");
+    } else {
+      user = eggCount.toString(); // Convert user to string before storing in cookie
+      if (user != "" && user != null) {
+        setCookie("username", user, 30);
+      }
+    }
+  } else {
+    egg.innerHTML = `<h4>Eggs found: 7!</h4>`;
+  }
+});
 
         document.getElementById('okay-button2').addEventListener('click', function () {
           document.getElementById('overlay2').style.display = 'none';
