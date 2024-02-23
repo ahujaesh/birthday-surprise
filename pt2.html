@@ -32,8 +32,28 @@
     <div id="eggs">
         <h4 id="score">Eggs found: 0</h4>
         <button id="found-button">I found an egg!</button>
-
+	<button id="pause-button">Pause</button>
+   </div>
+	
+    <div id="pause" >
+	<h2>The game is paused.</h2>
+	<button id="unpause-button">Unpause</button>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
     </div>
+	
     <div id="jumpscare">
     </div>
 
@@ -1013,7 +1033,18 @@ function updateDrive(forward = js.forward, turn = js.turn) {
           egg.innerHTML = `<h4>You have found all of the seven eggs that have been scattered around the map! Good Job, and Happy Birthday :) If you are interested in how I built this over only <strong>seven weeks<strong>, you can check out my commit history <button><a href="https://github.com/ahujaesh/birthday-surprise/commits/main/">here.</a><button></h4>`;
         }
       });
+	    
+   document.getElementById('pause-button').addEventListener('click', function () {
+	document.getElementById('pause').style.display = 'block';
+	document.getElementById('pause-button').style.display = 'none';
 
+   });
+
+    document.getElementById('unpause-button').addEventListener('click', function () {
+	document.getElementById('pause').style.display = 'none';
+	document.getElementById('pause-button').style.display = 'block';
+
+    });
 
         document.getElementById('okay-button2').addEventListener('click', function () {
           document.getElementById('overlay2').style.display = 'none';
@@ -1080,11 +1111,26 @@ function updateDrive(forward = js.forward, turn = js.turn) {
 		background-color: blue;
         	z-index: 289;
         	border-radius: 12px;
+		margin: 2px;
 	      }
 
             #found-button{
             	float: right;
             }
+
+	    #pause-button{
+            	background-color: red;
+            }
+	    
+	    #unpause-button{
+            	background-color: red;
+            }
+
+	    #pause {
+		display: none;
+	        text-align: center;
+		top: 50%;
+	    }
 
   </style>
 </head>
