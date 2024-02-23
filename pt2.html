@@ -1,58 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Birthday Surprise</title>
-  <link rel="icon" type="image/x-icon" href="favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Surprise</title>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
 
-  <!-- Three.js scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r124/three.min.js"></script>
-  <script src="https://static.staticsave.com/threejs/jsonloader.js"></script>
-  <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.5/dat.gui.min.js"></script>
+    <!-- Three.js scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r124/three.min.js"></script>
+    <script src="https://static.staticsave.com/threejs/jsonloader.js"></script>
+    <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.5/dat.gui.min.js"></script>
 
-  <!-- Processing scripts -->
-  <script type="text/javascript" src="https://unpkg.com/three@0.126.0/examples/js/postprocessing/EffectComposer.js"></script>
-  <script type="text/javascript" src="https://unpkg.com/three@0.126.0/examples/js/postprocessing/ShaderPass.js"></script>
-  <script type="text/javascript" src="https://unpkg.com/three@0.126.0/examples/js/postprocessing/RenderPass.js"></script>
-  <script type="text/javascript" src="https://unpkg.com/three@0.126.0/examples/js/postprocessing/MaskPass.js"></script>
+    <!-- Processing scripts -->
+    <script type="text/javascript" src="https://unpkg.com/three@0.126.0/examples/js/postprocessing/EffectComposer.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/three@0.126.0/examples/js/postprocessing/ShaderPass.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/three@0.126.0/examples/js/postprocessing/RenderPass.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/three@0.126.0/examples/js/postprocessing/MaskPass.js"></script>
 
-  <!-- Shaders -->
-  <script type="text/javascript" src="https://unpkg.com/three@0.126.0/examples/js/shaders/CopyShader.js"></script>
-  <script type="text/javascript" src="https://unpkg.com/three@0.126.0/examples/js/shaders/HorizontalTiltShiftShader.js"></script>
+    <!-- Shaders -->
+    <script type="text/javascript" src="https://unpkg.com/three@0.126.0/examples/js/shaders/CopyShader.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/three@0.126.0/examples/js/shaders/HorizontalTiltShiftShader.js"></script>
 
-  <!-- Cannon.js script -->
-  <script src="https://cdn.rawgit.com/schteppe/cannon.js/master/build/cannon.js"></script>
-  <div id="goal">
-    <p id="goal">Goal: Find all the dragon eggs!</p>
-  </div>
-  <div id="eggs">
-    <h4 id="score">Eggs found: 0</h4>
-    <button id="found-button">I found an egg!</button>
-  </div>
-  <div id="jumpscare">
-  </div>
+    <!-- Cannon.js script -->
+    <script src="https://cdn.rawgit.com/schteppe/cannon.js/master/build/cannon.js"></script>
 
-  <div id="info"></div>
-
-  <!-- Intro Screen Overlay -->
-  <div id="overlay">
-    <div id="modal-content" style="z-index: 289;">
-      <br>
-      <br>
-      <br>
-      <p>	Instructions: Now that you have completed the tutorial page (If you haven't go <a href="https://ahujaesh.github.io/birthday-surprise/">here</a>), you can be loaded into the actual world. In this game, a mother dragon has lost all of her dragon eggs, and it is up to you to find all seven of them. The controls are the same as the tutorial. Good luck!</p>
-      <br>
-      <br>
-      <br>
-      <button id="okay-button">I'm ready to begin!</button>
-      <p>Have Fun :)</p>
+    <!-- Your existing game HTML content -->
+    <div id="goal">
+        <p id="goal">Goal: Find all the dragon eggs!</p>
     </div>
-  </div>
+    <div id="eggs">
+        <h4 id="score">Eggs found: 0</h4>
+        <button id="found-button">I found an egg!</button>
 
-  <script>
+    </div>
+    <div id="jumpscare">
+    </div>
+
+    <div id="info"></div>
+
+    <!-- Intro Screen Overlay -->
+    <div id="overlay">
+        <div id="modal-content" style="z-index: 289;">
+            <br>
+            <br>
+            <br>
+            <p>	Instructions: Now that you have completed the tutorial page (If you haven't, please go <a href="https://ahujaesh.github.io/birthday-surprise/">here</a>), you can be loaded into the actual world. In this game, a mother dragon has lost all of her dragon eggs, and it is up to you to find all seven of them. The eggs are suposed to be found in order of their colors. For example, you should go and find the red egg first, press the "I found an egg" button, then go to the orange egg, press the "I found an egg" button, go to the yellow egg, ect. The controls are the same as the tutorial. and once you find the purple egg, you will recieve instructions on how to proceed. Good luck and have fun!</p>
+            <br>
+            <p> Made by Eshaan Ahuja</p>
+            <br>
+            <br>
+            <br>
+            <button id="okay-button">I'm ready to begin!</button>
+            <p>Have Fun :)</p>
+        </div>
+    </div>
+
+    <div id="scene-container"></div>
+
+
+    <script>
+          // Placeholder for your game logic
           function runGame() {
+              // Replace the following line with your actual game logic
 		      const randnum = (min, max) => Math.round(Math.random() * (max - min) + min);
 
         class CannonHelper{
@@ -388,7 +398,11 @@
         renderer.shadowMap.enabled = true;
         renderer.shadowMapSoft = true; // Shadow
         renderer.shadowMapType = THREE.PCFShadowMap; //Shadow
-        document.body.appendChild( renderer.domElement );
+        // Find the container by ID
+        const container = document.getElementById('scene-container');
+
+        // Append the renderer's domElement to the container
+        container.appendChild(renderer.domElement);
 
 
           //===================================================== cannon
@@ -398,7 +412,11 @@
 
             var helper = new CannonHelper(scene);
             var physics = {};
-            const world = new CANNON.World();
+
+
+                const world = new CANNON.World();
+
+
             world.broadphase = new CANNON.SAPBroadphase(world);
             world.gravity.set(0, -10, 0);
             world.defaultContactMaterial.friction = 0;
@@ -657,7 +675,9 @@
         }();
 
 
-        //can add an array of things
+
+
+        //can add an array if things
         var check;
         Promise.all( [
           img2matrix.fromUrl( 'https://upload.wikimedia.org/wikipedia/commons/5/57/Heightmap.png', sizeX, sizeY, minHeight, maxHeight )(),
@@ -787,7 +807,6 @@
 
     this.onMove.call(this.game, 0, 0);
   }
-//arrow keys plus WASD
 
   handleKeyDown(evt) {
     switch (evt.key) {
@@ -888,6 +907,9 @@ function updateDrive(forward = js.forward, turn = js.turn) {
             let delta = clock.getDelta();
             mixers.map(x=>x.update(delta));
 
+
+
+
             /*cannon*/
           const now = Date.now();
           if (lastTime===undefined) lastTime = now;
@@ -901,24 +923,38 @@ function updateDrive(forward = js.forward, turn = js.turn) {
 
           if(check) check();
 
-          const loaderEgg = new THREE.GLTFLoader();
+		
+		// eggs--------------------------------------------------------------
+		function createFlagLocation(x, y, z, color) {
+		    var sphereGeometry = new THREE.SphereBufferGeometry(0.7, 32, 32);
+		    var sphereMaterial = new THREE.MeshPhongMaterial({ color: new THREE.Color(color) });
+		    var sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+		
+		    // Adjust the scale to make the spheres fatter
+		    sphere.scale.set(1.5, 3, 1.5);
+		
+		    sphere.castShadow = true;
+		    scene.add(sphere);
+		
+		    sphere.position.set(x, y, z);
+		    sphere.rotateY(Math.PI);
+		}
 
-<!--// Load the GLTF model-->
-<!--loaderEgg.load(-->
-<!--    'https://raw.githubusercontent.com/ahujaesh/birthday-surprise/main/Dragon_egg_with_a_floating_sphere_inside_V2.gltf',-->
-<!--    (gltf) => {-->
-<!--        scene.add(gltf.scene); // Add the loaded model to the scene-->
-<!--        // Position and scale the model as needed-->
-<!--        gltf.scene.scale.set(0.5, 0.5, 0.5);-->
-<!--        gltf.scene.position.set(0, 0, -2);-->
-<!--    },-->
-<!--    (xhr) => {-->
-<!--        console.log((xhr.loaded / xhr.total) * 100 + '% loaded');-->
-<!--    },-->
-<!--    (error) => {-->
-<!--        console.error('An error occurred:', error);-->
-<!--    }-->
-<!--);-->
+		// X - moves object left from spawn if positive, negative moves it right
+		// Y - height (Positive up)
+		// Z - Distance away from the spawn point (Positive away, Negative closer)
+		
+		// Create flag locations
+		createFlagLocation(10, 0, 50, 'red');
+		createFlagLocation(40, 10, 200, 'orange');
+		createFlagLocation(90, 32, 210, 'yellow');
+		createFlagLocation(130, 39, 210, 'green');
+		createFlagLocation(150, 46, 210, 'blue');
+		createFlagLocation(165, -3, 405, 'purple');
+		createFlagLocation(166, 8, 465, 'pink');
+		// end eggs ----------------------------------------------------------
+		
+
 
            //display coordinates
             //info.innerHTML = `<span>X:</span>${mesh.position.x.toFixed(2)} <span>Y:</span>${mesh.position.y.toFixed(2)} <span>Z:</span>${mesh.position.z.toFixed(2)}`
@@ -974,7 +1010,7 @@ function updateDrive(forward = js.forward, turn = js.turn) {
           eggCount++; // Increment the egg count
           egg.innerHTML = `<h4>Eggs found: ${eggCount}</h4>`;
         } else {
-          egg.innerHTML = `<h4>Eggs found: 7!</h4>`;
+          egg.innerHTML = `<h4>You have found all of the seven eggs that have been scattered around the map! Good Job, and Happy birthday :)</h4>`;
         }
       });
 
@@ -983,33 +1019,15 @@ function updateDrive(forward = js.forward, turn = js.turn) {
           document.getElementById('overlay2').style.display = 'none';
 
           document.getElementById('goal').innerHTML = "opening world";
-            //new dragon code here in a function
         });
-     </script><!-- End Javascript -->
-  <!-- CSS -->
-  <style>
-          html {
-            z-index: 0;
-          }
-
+      </script>
+    <style>
 	      body {
 	        margin: 0;
 	        overflow: hidden;
 	        background-color:#87ceeb;
 	        color: white;
-              position: relative; /* Add position property */
-
-                        z-index: 0;
-
 	      }
-	      #info,
-          #goal,
-          #score,
-          #eggs,
-          button {
-            background-color: transparent;
-            z-index: 289;
-          }
 
 	      #info {
 	        font-family: monospace;
@@ -1060,20 +1078,15 @@ function updateDrive(forward = js.forward, turn = js.turn) {
 	      button {
 		color: white;
 		background-color: blue;
-        	z-index: 300;
+        	z-index: 289;
         	border-radius: 12px;
 	      }
-            
-          #found-button{
-              float: right;
-          }
-        #scene-container {
-          position: absolute;
-          top: 0;
-          left: 0;
-          z-index: 200; /* Set a z-index lower than text and button */
-        }
-  </style><!-- End CSS -->
+
+            #found-button{
+            	float: right;
+            }
+
+  </style>
 </head>
 <body>
 </body>
