@@ -31,6 +31,7 @@ This repository contains 2 main .html files, that both use Internal CSS and Java
 - Other files (.HTML)
      - [eggsTesting.html](https://github.com/ahujaesh/birthday-surprise/blob/main/eggsTesting.html)
        - This is used to test the eggs placement, and will eventually be merged into [pt2.html](https://github.com/ahujaesh/birthday-surprise/blob/main/pt2.html)
+           - UPDATE (Febuary 23, 2024): This was merged into pt2.html by [this](https://github.com/ahujaesh/birthday-surprise/commit/67f5d59f301ae8bc1d08e853359b1df430771611) commit on Febuary 22, 2024, and is now depreciated.
        - You can view this [here](https://ahujaesh.github.io/birthday-surprise/eggsTesting.html).
     - [testing.html](https://github.com/ahujaesh/birthday-surprise/blob/main/.idea/testing.html)
       - Just holding some testing code.
