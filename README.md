@@ -10,11 +10,13 @@ This website used a three dimenstional rendering software called "THREE.js". Thi
 
 This website also uses some standard _HTML_ elements such as ```<p>``` and the ```<h4>``` elements to convey information to the user, and these elements are updated using the ```.innerHTML``` syntax to respond to user input, along with ```<button>``` elements and ```<a>``` elements to gain input and advance users to the next site.
 
+On top of this, within all the ```.html``` files, I also include Internal _CSS_, that, in combination with some _Javascript_, allows for me to make elements appear and disappear using properties like the ```display: block``` property or ```display: flex```. I  also use _CSS_ to add backgrounds (```background-color:#87ceeb;```), and more.
+
 Along with these, I also use many other code elements, and I am always looking to add more to improve the user experience.
 
 **Files and Documentation:**
 
-This repository contains 2 main .html files, that both use Internal CSS and Javascript for easy readability. It also contains some other files. I have outlined the purpose of each of these files below, along with a higherarchy of importance. If you have something to add, feel free to shoot me a PR or an Issue.
+This repository contains 2 main ```.html``` files, that both use Internal CSS and Javascript for easy readability. It also contains some other files. I have outlined the purpose of each of these files below, along with a higherarchy of importance. If you have something to add, feel free to shoot me a PR or an Issue.
 
 - File one ([index.html](https://github.com/ahujaesh/birthday-surprise/blob/main/index.html)):
     - This is the default landing page for the website and serves as the introduction page
