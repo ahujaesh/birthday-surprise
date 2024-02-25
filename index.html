@@ -31,29 +31,27 @@
   </div>
 	<div id="jumpscare">
 	</div>
-	
+
       <div id="info"></div>
 
       <!-- Intro Screen Overlay -->
       <div id="overlay">
           <div id="modal-content" style="z-index: 289;">
-	      <br>
-	      <br>
-		  <br>
-              <p>	Instructions: Happy birthday Olivia! Instead of a normal birthday gift, I decided to go and build this series of websites for you to explore. I recommend sitting down when you have time and completing this in one go, on a computer with a good GPU, though it will work on mobile. Think of it as a scavenger hunt. This website in particular contains a series of puzzles. Your first goal within this website is to get to the flag, and you can move by dragging the joystick or the arrow keys. If there are any errors, shoot me a text. Good Luck!</p>
-              <!-- Add any other instructions or information here -->
-	      <br>
-	      <br>
-		  <br>
-              <button id="okay-button">I'm ready to begin</button>
-
-		<p> Hosted on Github Pages.</p>
-		<p> Credit to <a href="https://github.com/pizza3"><em>Yugam Dhuriya (pizza3)</em></a> for inspo.</p>
-		<p> Made by <a href="https://github.com/ahujaesh"><em>Eshaan Ahuja (ahujaesh)</em></a>.</p>
-		<p>Have Fun :)</p>
-          </div>
+            <br>
+            <br>
+            <br>
+            <p>	Instructions: Happy birthday Olivia! Instead of a normal birthday gift, I decided to go and build this series of websites for you to explore. I recommend sitting down when you have time and completing this in one go, on a computer with a good GPU (Graphics Processing Unit), though it will work on mobile. (Note: During the seven weeks that I spent designing and building this site, some sections required a higher graphics processing power than others, leading to lag and crashes on low memory devices, such as Chromebooks.) You can think of these pages as a scavenger hunt. This website in particular contains a series of puzzles. Your first goal within this website is to get to the flag, and you can move by dragging the joystick, using WASD, or pressing the arrow keys. If there are any errors, feel free shoot me a text and I will fix them. Good Luck, and have fun!</p>
+            <br>
+            <br>
+            <br>
+            <button id="okay-button">I'm ready to begin</button>
+            <p> Hosted on Github Pages.</p>
+            <p> Credit to <a href="https://github.com/pizza3"><em>Yugam Dhuriya (pizza3)</em></a> for inspo.</p>
+            <p> Made by <a href="https://github.com/ahujaesh"><em>Eshaan Ahuja (ahujaesh)</em></a>.</p>
+            <p>Have Fun :)</p>
+        </div>
       </div>
-
+            <!-- outro screen overlay -->
           <div id="overlay2">
               <div id="modal-content2" style="z-index: 289;">
                   <br>
@@ -63,7 +61,6 @@
                   <br>
                   <br>
                   <p>	Instructions: Now that you have completed the tutorial, you are about to enter the actual game. Movement and scoring is the same as the tutorial. Good luck!</p>
-                  <!-- Add any other instructions or information here -->
                   <br>
                   <br>
                   <br>
@@ -75,7 +72,6 @@
           </div>
 
       <script>
-          // Placeholder for your game logic
           function runGame() {
               // Replace the following line with your actual game logic
 		      const randnum = (min, max) => Math.round(Math.random() * (max - min) + min);
@@ -100,14 +96,6 @@
 
                 this.sun = light;
                 this.scene.add(light);
-
-
-
-
-
-
-
-
 
             }
 
@@ -294,9 +282,8 @@
                 }
                 geometry.computeBoundingSphere();
                 geometry.computeFaceNormals();
-
-
-                //https://stackoverflow.com/questions/52614371/apply-color-gradient-to-material-on-mesh-three-js
+                //the world's color scheme
+                //the world is split up into 5 levels vertically, and you can chose the color of each level here using HEX or RGB. The level colors blend into each other giving whatever effect you desire
                  var rev = true;
                 var cols = [{
                   stop: 0,
@@ -429,16 +416,6 @@
             }
         }
 
-
-
-
-
-
-
-
-
-
-
         //===================================================== scene
         var scene = new THREE.Scene();
 
@@ -481,22 +458,10 @@
             // We must add the contact materials to the world
             world.addContactMaterial(wheelGroundContactMaterial);
 
-
-
-
-
-
           //===================================================== add front & back lighting
          var light = new THREE.DirectionalLight( new THREE.Color("gray"), 1);
          light.position.set(1, 1, 1).normalize();
          scene.add(light);
-
-
-
-
-
-
-
 
         //===================================================== resize
         window.addEventListener("resize", function() {
@@ -543,9 +508,6 @@
         //activate tilt effect
         document.querySelector('.dg .c input[type="checkbox"]').click();
         dat.GUI.toggleHide();
-
-
-
 
         //=========================================================================================== add tweening
         //https://greensock.com/forums/topic/16993-threejs-properties/
@@ -600,13 +562,6 @@
           }
         });
 
-
-
-
-
-
-
-
         //===================================================== model
         var geometry = new THREE.BoxBufferGeometry( .5, 1, .5 );
          /* We change the pivot point to be at the bottom of the cube, instead of its center. So we translate the whole geometry. */
@@ -622,16 +577,14 @@
         light.target = mesh;//shadow will follow mesh          
         mesh.add( light );
 
-
-
-
-        //===================================================== add Model
+        //===================================================== add the Player Model
         var mixers = [];
         var clip1;
         var clip2;
         var clip3;
 
         var loader = new THREE.GLTFLoader();
+        //change the following file to change the player model
         loader.load( 'https://raw.githubusercontent.com/baronwatts/models/master/astronaut.glb', function ( object ) {
            object.scene.traverse( function( node ) {
               if ( node instanceof THREE.Mesh ) { 
@@ -649,18 +602,12 @@
           mesh.add(lightPlayer);*/
 
 
-
-
           var mixer = new THREE.AnimationMixer(player);
           clip1 = mixer.clipAction(object.animations[0]);
           clip2 = mixer.clipAction(object.animations[1]);
           mixers.push(mixer);
 
         });
-
-
-
-
 
 
         //===================================================== add Terrain
@@ -741,9 +688,6 @@
 
         }();
 
-
-
-
         //can add an array if things
         var check;
         Promise.all( [
@@ -751,13 +695,6 @@
         ] ).then( function ( data ) {
 
           var matrix = data[ 0 ];
-
-          //console.log(matrix);
-
-
-
-
-        //Array(128) [ (128) […], (128) […], (128) […], (128) […], (128) […], (128) […], (128) […], (128) […], (128) […], (128) […], … ]
 
 
             const terrainShape = new CANNON.Heightfield(matrix, {elementSize: 10});
@@ -776,17 +713,6 @@
             raycastHelperGeometry.rotateX( Math.PI / 2 );
             raycastHelperMesh = new THREE.Mesh( raycastHelperGeometry, new THREE.MeshNormalMaterial() );
             scene.add( raycastHelperMesh );
-
-
-
-            //console.log( terrainBody.threemesh.children[0] );
-
-
-
-
-
-
-
 
             check = function(){
 
@@ -818,15 +744,6 @@
 
 
           });//end Promise
-
-
-
-
-
-
-
-
-
 
 
         //=========================================================================================== flag
@@ -875,13 +792,6 @@
 
         flagLocation.add(plane);
 
-
-
-
-
-
-
-
         //===================================================== add tree
         //3D Model from http://www.sweethome3d.com/searchModels.jsp?model=tree&x=0&y=0
         /*var loader = new THREE.LegacyJSONLoader();
@@ -906,8 +816,6 @@
 
         });
         */
-
-
 
 
         //===================================================== add sky particles
@@ -1138,8 +1046,6 @@ function updateDrive(forward = js.forward, turn = js.turn) {
             mixers.map(x=>x.update(delta));
 
 
-
-
             /*cannon*/
           const now = Date.now();
           if (lastTime===undefined) lastTime = now;
@@ -1154,18 +1060,8 @@ function updateDrive(forward = js.forward, turn = js.turn) {
           if(check) check();
 
 
-
-
-
-
-
-
-
            //display coordinates
             info.innerHTML = `<span>X:</span>${mesh.position.x.toFixed(2)} <span>Y:</span>${mesh.position.y.toFixed(2)} <span>Z:</span>${mesh.position.z.toFixed(2)}`
-
-            // flag test one : X: 10.15,     Y: -0.73,     Z: 50.07
-
 	
             if (mesh.position.x.toFixed(2) > 0 && mesh.position.x.toFixed(2) < 50 && mesh.position.y.toFixed(2) > -50 && mesh.position.y.toFixed(2) < 50 && mesh.position.z.toFixed(2) > 35 && mesh.position.z.toFixed(2) < 70) {
                 info.innerHTML = `<p>Good job, you have completed the first quest. Next, climb a mountain over Y = 30. Good luck!</p>`
@@ -1202,10 +1098,6 @@ function updateDrive(forward = js.forward, turn = js.turn) {
             //change spawn to X: -56.00,     Y: 26.29,     Z: -38.02
 
 
-
-
-
-
         })();
           } // end game logic
 
@@ -1238,6 +1130,7 @@ function updateDrive(forward = js.forward, turn = js.turn) {
 	        background-color: #000000;
 	        color: white;
 	      }
+
 	      #info {
 	        font-family: monospace;
 	        font-weight: normal;
@@ -1264,7 +1157,6 @@ function updateDrive(forward = js.forward, turn = js.turn) {
 	        -webkit-transform: translateX(-50%);
 	        font-size: 12px;
 	        z-index: 289;
-/* 	        display: none; */
 	      }
 	
 	      #info span {
@@ -1274,7 +1166,8 @@ function updateDrive(forward = js.forward, turn = js.turn) {
 	      #overlay2 {
 	        display: none;
 	      }
-  </style>
+
+    </style>
   </head>
   <body>
   </body>

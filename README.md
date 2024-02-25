@@ -8,9 +8,9 @@ This is a repository with the source code for the first part of my friend's birt
 
 This website used a three dimenstional rendering software called "THREE.js". This software allows the user to add Javascript commands in their code to render different objects to your scene, and I have used this software to render the word that you move around in. You can read more about THREE.js [here](https://discoverthreejs.com/).
 
-This website also uses some standard HTML elements such as ```<p>``` and the ```<h4>``` elements to convey information to the user, and these elements are updated using the ```.innerHTML``` syntax to respond to user input, along with ```<button>``` elements and ```<a>``` elements to gain input and advance users to the next site.
+This website also uses some standard _HTML_ elements such as ```<p>``` and the ```<h4>``` elements to convey information to the user, and these elements are updated using the ```.innerHTML``` syntax to respond to user input, along with ```<button>``` elements and ```<a>``` elements to gain input and advance users to the next site.
 
-Along with these, I also use many other code elements and am always looking to add more to improve the user experience.
+Along with these, I also use many other code elements, and I am always looking to add more to improve the user experience.
 
 **Files and Documentation:**
 

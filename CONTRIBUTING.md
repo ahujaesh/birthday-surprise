@@ -1,1 +1,1 @@
-If you see an issue, or think of an enhancement, for this site, please add an issue or push a PR. All help is appreciatied and I'll make sure to credit you with a link to your profile in the intro screen. Thanks!
+If you see an issue, or think of an enhancement, for this site, please add an issue or push a PR. All help is appreciated and I'll make sure to credit you with a link to your profile in the intro screen. Thanks!
