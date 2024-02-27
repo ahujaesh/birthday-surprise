@@ -1095,7 +1095,9 @@ function updateDrive(forward = js.forward, turn = js.turn) {
           eggCount++; // Increment the egg count
           egg.innerHTML = `<h4>Eggs found: ${eggCount}</h4>`;
         } else {
-          egg.innerHTML = `<h4>You have found all of the seven eggs that have been scattered around the map! Good Job, and Happy Birthday :) If you are interested in how I built this over only <strong>seven weeks<strong>, you can check out my commit history <button><a href="https://github.com/ahujaesh/birthday-surprise/commits/main/">here.</a><button></h4>`;
+	  var g = document.getElementById('goal');
+	  g.innerHTML = '<p></p>';
+	  egg.innerHTML = `<h4>You have found all of the seven eggs that have been scattered around the map! Good Job, and Happy Birthday :) If you are interested in how I built this over only <strong>seven weeks<strong>, you can check out my GitHub commit history <a href="https://github.com/ahujaesh/birthday-surprise/commits/main/">here</a>, or shoot me a text. Have a good day :)</h4>`;
         }
       });
 	    
