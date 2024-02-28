@@ -1,3 +1,9 @@
+# NOTE: Her birthday has now passed and this repository is no longer maintained
+
+ 
+ 
+ 
+ 
 # What is this?
 
 This is a repository with the source code for the first part of my friend's birthday gift - hosted [here](https://ahujaesh.github.io/birthday-surprise/) through GitHub Pages. If you see any errors or want to help, feel free to open an issue, fork this repository and start a pull request, or just email me here - [ahuja.eshaan0@gmail.com](mailto:ahuja.eshaan0@gmail.com)!
